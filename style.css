@@ -1,0 +1,72 @@
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+body,
+html {
+  padding: 0;
+  margin: 0;
+  
+  /* Disable the navigation scroll bar */
+  overflow: hidden;
+}
+
+.wrapper {
+  position: absolute;
+  width: 400%;
+  height: 100%;
+  top: 0;
+  left: 0;
+
+  /* Add transition to animate the slide */
+  transition: all .5s ease-out;
+}
+
+.slide {
+  float: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 25%;
+  height: 100%;
+  
+  font-family: arial;
+  font-size: 130px;
+  color: white;
+}
+
+.slide:nth-child(1) { background-color: #1abc9c; }
+.slide:nth-child(2) { background-color: #2ecc71; }
+.slide:nth-child(3) { background-color: #3498db; }
+.slide:nth-child(4) { background-color: #9b59b6; }
+
+.navigation {
+  position: absolute;
+  top: 25px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.navigation .nav-btn {
+  width: 25px;
+  height: 25px;
+  margin: 15px;
+
+  border-radius: 50%;
+  border: 3px solid white;
+  
+  transition: all .2s;
+  cursor: pointer;
+}
+
+/* Style of the nav button for the current showing slide */
+.navigation .nav-btn.current { background-color: #f1c40f }
+
+.navigation .nav-btn:hover {
+  border-width: 1px;
+  background-color: #2c3e50;
+}
